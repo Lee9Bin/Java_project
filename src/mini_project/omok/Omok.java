@@ -12,13 +12,13 @@ public class Omok {
 
 		while (true) {
 			board.print();
-			board.set(user);
+			user.set(board);
 			if (!board.check(user)) {
 				board.print();
 				break;
 			}
 			board.print();
-			board.set(computer);
+			computer.set(board);
 			if (!board.check(computer)) {
 				board.print();
 				break;

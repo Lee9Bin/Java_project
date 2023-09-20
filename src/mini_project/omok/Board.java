@@ -34,28 +34,29 @@ public class Board {
 		}
 		System.out.println();
 	}
-
-	public void set(Player player) {
-		Scanner scanner = new Scanner(System.in);
-		System.out.print(player.name+"> ");
-		String[] xy = scanner.nextLine().split(" ");
-
-		int x = Integer.parseInt(xy[1]);
-		int y = ((xy[0].toUpperCase()).charAt(0)) - 65;
-		if (x<0 || y <0 || x>=size || y >=size) {
-			System.out.println("좌표가 범위를 벗어났습니다.");
-			System.out.println("다시 입력해주세요");
-			set(player);
-			return; 
-		}
-		if (map[x][y] == "X" || map[x][y] == "O"){
-			System.out.println("이미 돌이 놓여진 자리 입니다.");
-			System.out.println("다시 입력해주세요");
-			set(player);
-			return;
-		}
-		map[x][y] = player.stone;
-	}
+	//바둑돌을 두는 기능은 플레이어가 한다고 판단돼서 Player 클래스로 메서드 이동
+//	public void set(Player player) {
+//		Scanner scanner = new Scanner(System.in);
+//		System.out.print(player.name+"> ");
+//		String[] xy = scanner.nextLine().split(" ");
+//
+//
+//		int x = Integer.parseInt(xy[1]);
+//		int y = ((xy[0].toUpperCase()).charAt(0)) - 65;
+//		if (x<0 || y <0 || x>=size || y >=size) {
+//			System.out.println("좌표가 범위를 벗어났습니다.");
+//			System.out.println("다시 입력해주세요");
+//			set(player);
+//			return;
+//		}
+//		if ("X".equals(map[x][y]) || "O".equals(map[x][y])){
+//			System.out.println("이미 돌이 놓여진 자리 입니다.");
+//			System.out.println("다시 입력해주세요");
+//			set(player);
+//			return;
+//		}
+//		map[x][y] = player.stone;
+//	}
 
 	public boolean check(Player player) {
 		int[] dx = { -1, -1, -1, 0, 1, 1, 1, 0 };
