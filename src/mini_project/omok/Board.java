@@ -48,6 +48,12 @@ public class Board {
 			set(player);
 			return; 
 		}
+		if (map[x][y] == "X" || map[x][y] == "O"){
+			System.out.println("이미 돌이 놓여진 자리 입니다.");
+			System.out.println("다시 입력해주세요");
+			set(player);
+			return;
+		}
 		map[x][y] = player.stone;
 	}
 
@@ -73,10 +79,9 @@ public class Board {
 							nexty += dy[i];
 						}
 						if (cnt == 5) {
-							
-							System.out.println("게임이 종료됩니다.");
 							System.out.println("오목이 완성됐습니다.");
 							System.out.println(player.name + "님이 승리하셨습니다.");
+							System.out.println("게임이 종료됩니다.");
 							return false;
 						}
 					}
